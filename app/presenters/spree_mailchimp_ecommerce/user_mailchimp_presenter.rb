@@ -15,6 +15,7 @@ module SpreeMailchimpEcommerce
         opt_in_status: user.privacy_policy,
         first_name: firstname,
         last_name: lastname,
+        birthday: user.created_at.strftime("%Y/%m/%d),
       }.merge(address).as_json
     end
 
