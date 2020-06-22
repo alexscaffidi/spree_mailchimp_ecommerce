@@ -12,7 +12,7 @@ module SpreeMailchimpEcommerce
       {
         id: Digest::MD5.hexdigest(user.email.downcase),
         email_address: user.email || "",
-        opt_in_status: true,
+        opt_in_status: user.privacy_policy,
         first_name: firstname,
         last_name: lastname,
       }.merge(address).as_json
